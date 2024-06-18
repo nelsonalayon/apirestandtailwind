@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -15,6 +16,18 @@ const config: Config = {
       },
     },
   },
+  colors: {
+    primary: colors.indigo,
+    secondary: colors.yellow,
+    neutral: colors.gray,
+  },
   plugins: [],
+  variants: {
+    extend: {
+      boxShadow: ["active"],
+      backgroundColor: ["active"],
+      textColor: ["active"],
+    },
+  },
 };
 export default config;
