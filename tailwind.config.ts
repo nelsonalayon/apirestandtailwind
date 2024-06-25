@@ -1,5 +1,5 @@
+import { url } from "inspector";
 import type { Config } from "tailwindcss";
-import colors from "tailwindcss/colors";
 
 const config: Config = {
   content: [
@@ -12,14 +12,22 @@ const config: Config = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",        
       },
-    },
-  },
-  colors: {
-    primary: colors.indigo,
-    secondary: colors.yellow,
-    neutral: colors.gray,
+      colors: {
+        primary: "#CC2D4A",
+        secondary: "#8FA206",
+        tertiary: "#61AEC9",
+      },
+      textColor: () => ({
+        primary: "#CC2D4A",
+        secondary: "#8FA206",
+        tertiary: "#61AEC9",
+      }),
+      background: { 
+        sanFrancisco: "url('/img/sanFrancisco.jpg')",        
+      },
+    }    
   },
   plugins: [],
   variants: {
@@ -27,6 +35,7 @@ const config: Config = {
       boxShadow: ["active"],
       backgroundColor: ["active"],
       textColor: ["active"],
+      width: ["focus", "hover", "responsive"],
     },
   },
 };
