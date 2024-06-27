@@ -2,6 +2,7 @@ import Image from "next/image";
 import Hero from "./components/hero";
 import Card from "./components/smallCard";
 import LargeCard from "./components/largeCard";
+import FAQItem from "./components/faqs";
 
 import Seatle from "../../public/img/seattle.jpg";
 import Bali from "../../public/img/bali.jpg";
@@ -20,7 +21,6 @@ import Yosemite from "../../public/img/yosemite.jpg";
 // Data is the function that fetches the data from the API
 import Data from "../functions/fetch";
 
-
 const lovelyPlaces = [
   {
     name: "Norway",
@@ -38,7 +38,7 @@ const lovelyPlaces = [
     image: Bali,
   },
   {
-    name: "Chicago",  
+    name: "Chicago",
     description: "a beautiful landscape",
     image: Chicago,
   },
@@ -89,13 +89,68 @@ const lovelyPlaces = [
   },
 ];
 
+const dataLagesCards: {
+  title: string;
+  description: string;
+  image: string;
+}[] = [
+  {
+    title: "Chicago",
+    description: "2 rooms, bathroom, kitchen",
+    image: "bg-chicago",
+  },
+  {
+    title: "New York",
+    description: "3 rooms, 2 bathrooms, kitchen",
+    image: "bg-newYork",
+  },
+  {
+    title: "Los Angeles",
+    description: "2 rooms, bathroom, kitchen",
+    image: "bg-la",
+  },
+  {
+    title: "San Francisco",
+    description: "4 rooms, 2 bathrooms, kitchen",
+    image: "bg-sanFrancisco",
+  },
+  {
+    title: "Miami",
+    description: "2 rooms, bathroom, kitchen",
+    image: "bg-miami",
+  },
+  {
+    title: "Sydney",
+    description: "3 rooms, bathroom, kitchen",
+    image: "bg-sydney",
+  },
+];
+
+const faqs = [
+  {
+    question: "How can I book a room?",
+    answer:
+      "You can book a room by clicking on the 'Book Now' button on the homepage.",
+  },
+  {
+    question: "How can I cancel my booking?",
+    answer:
+      "You can cancel your booking by clicking on the 'Cancel Booking' button on the homepage.",
+  },
+  {
+    question: "How can I contact customer service?",
+    answer:
+      "You can contact customer service by clicking on the 'Contact Us' button on the homepage.",
+  },
+];
+
 export default function MyTailwindFetchApp() {
   return (
     <>
       <header id="home" className="bg-tertiary">
         <Hero />
         {/* <div>{Data("https://jsonplaceholder.typicode.com/users")}</div> */}
-      </header>      
+      </header>
       <section id="recommended" className="p-20 ">
         <p className="text-3xl font-semibold text-primary">Recommended</p>
         <div className=" w-auto h-72 items-center flex space-x-4 overflow-x-auto overscroll-x-contain mt-6 overflow-y-hidden">
@@ -114,12 +169,28 @@ export default function MyTailwindFetchApp() {
         </div>
       </section>
       <section id="Featured Income" className="px-6 h-full w-full">
-        <p className="text-3xl text-primary font-semibold p-b-6">Featured Income</p>
+        <p className="text-3xl text-primary font-semibold p-b-6">
+          Featured Income
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          <LargeCard />
-          <LargeCard />
-          <LargeCard />
-          <LargeCard /> 
+          {dataLagesCards.map((card, index) => {
+            return (
+              <LargeCard
+                key={index}
+                title={card.title}
+                description={card.description}
+                image={card.image}
+              />
+            );
+          })}
+        </div>
+      </section>
+      <section id="faqs" className="w-full h-full">
+        <div className="w-full h-full flex flex-col items-center p-6 space-y-6">
+          <p className="text-3xl text-primary font-semibold mb-6">FAQs</p>
+          {faqs.map((faq, index) => (
+            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+          ))}
         </div>
       </section>
     </>

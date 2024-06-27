@@ -35,3 +35,7 @@ body {
 .Card {
   @apply w-48 h-64 shadow-md rounded-lg flex-none transform transition-all hover:-translate-y-4 hover:shadow-xl;
 }
+
+.CardTitle {
+  @apply text-3xl font-semibold px-8 pb-2 pt-8 text-white;
+}

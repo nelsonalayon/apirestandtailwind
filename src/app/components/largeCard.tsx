@@ -1,16 +1,9 @@
-import Image from "next/image";
-import chicago from "../../../public/img/chicago.jpg";
 
-export default function LargeCard() {
+export default function LargeCard(props: any) {
   return (
-    <div className="w-full h-96 rounded-xl bg-sanFrancisco" > 
-         
-        {/* <Image src={chicago} alt="Large Card" className=" "  /> */}
-        <p className="">Chicago</p>
-        <p className="">2 rooms, bathroom, kitchen</p>    
-       
-        
-      
+    <div className={`w-full h-96 rounded-xl ${props.image} bg-cover`} >
+        <p className="CardTitle">{props.title}</p>
+        <p className="text-sm pl-8 text-white mr-24">{props.description}</p>    
     </div>
   );
-} // End of LargeCard component
+} 
