@@ -10,7 +10,7 @@ async function getData(url: string) {
   return res.json();
 }
 
-export default async function Data(url: any) {
+export default async function Data(url: string) {
   const data = await getData(url);
 
   return data?.map((user: any) => (

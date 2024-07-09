@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client"
 import Hero from "./components/hero";
 import Card from "./components/smallCard";
 import LargeCard from "./components/largeCard";
@@ -17,6 +17,8 @@ import Sanfrancisco from "../../public/img/sanFrancisco.jpg";
 import Switzerland from "../../public/img/switzerland.jpg";
 import Sydnedy from "../../public/img/sydney.jpg";
 import Yosemite from "../../public/img/yosemite.jpg";
+import resize from "../functions/screenSize";
+import "./globals.css";
 
 // Data is the function that fetches the data from the API
 import Data from "../functions/fetch";
@@ -153,7 +155,7 @@ export default function MyTailwindFetchApp() {
       </header>
       <section id="recommended" className="p-20 ">
         <p className="text-3xl font-semibold text-primary">Recommended</p>
-        <div className=" w-auto h-72 items-center flex space-x-4 overflow-x-auto overscroll-x-contain mt-6 overflow-y-hidden">
+        <div className=" w-auto h-72 items-center flex space-x-4 overflow-x-auto overscroll-x-contain mt-6">
           {lovelyPlaces.map((place, index) => {
             return (
               <Card
@@ -168,31 +170,50 @@ export default function MyTailwindFetchApp() {
           })}
         </div>
       </section>
-      <section id="Featured Income" className="px-6 h-full w-full">
+      <section id="featured income" className="px-6 h-full w-full">
         <p className="text-3xl text-primary font-semibold p-b-6">
           Featured Income
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        
+        <div className="manualGrid ">
           {dataLagesCards.map((card, index) => {
+            let style 
+            
+            if(resize() > 1280 ) {
+                 if (index === 0) {
+              style = "item-a";
+            } else if (index === 1) {
+              style = "item-b";
+            } else if (index === 2) {
+              style = "item-c";
+            } else if (index === 3) {
+              style = "item-d";
+            } else {
+              style = "item-e"
+            }
+
+            } else { style = { gridArea: ' ' } } 
+         
             return (
               <LargeCard
                 key={index}
                 title={card.title}
                 description={card.description}
                 image={card.image}
+                style={style}
               />
             );
           })}
         </div>
       </section>
       <section id="faqs" className="w-full h-full">
-        <div className="w-full h-full flex flex-col items-center p-6 space-y-6">
-          <p className="text-3xl text-primary font-semibold mb-6">FAQs</p>
+        <div className="w-full h-full flex flex-col p-6 space-y-6">
+          <p className="text-3xl text-primary font-semibold mb-6 mt-6">FAQs</p>
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
-      </section>
+      </section>      
     </>
   );
 }

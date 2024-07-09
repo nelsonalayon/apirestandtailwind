@@ -1,24 +1,22 @@
+const items = [
+  "about us",
+  "contact us",
+  "terms and conditions",
+  "privacy policy",
+  "faqs",
+  "thanks for Platzi and for visiting this page",
+];
+
 export default function Footer() {
   return (
     // text default by copilot
-    <footer className="bg-tertiary">
-      <div className="flex justify-center">
-        <div className="flex justify-between w-auto">
-          <div className="flex">
-            <a href="#home" className="text-white p-4">
-              tanks
-            </a>
-            <a href="#about" className="text-white p-4">
-              for
-            </a>
-            <a href="#services" className="text-white p-4">
-              viewing
-            </a>
-            <a href="#contact" className="text-white p-4">
-              this
-            </a>
-          </div>
-        </div>
+    <footer className="w-full h-auto bg-slate-400 p-6 space-y-2">
+      <div>
+        {items.map((item, index) => (
+          <p key={index} className="text-sm text-gray-300">
+            {item}
+          </p>
+        ))}
       </div>
     </footer>
   );

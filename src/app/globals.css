@@ -37,5 +37,60 @@ body {
 }
 
 .CardTitle {
-  @apply text-3xl font-semibold px-8 pb-2 pt-8 text-white;
+  @apply text-3xl font-semibold px-8 pb-2 pt-8 text-white drop-shadow-lg;
+}
+
+.manualGrid {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .manualGrid {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .manualGrid {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .manualGrid {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1280px) {
+  .manualGrid {
+    grid-template-rows: 650px 416px 416px 650px;
+    grid-template-columns: 2fr 3fr;
+    grid-template-areas:
+      "header header"
+      "main sidebarA"
+      "main sidebarB"
+      "footer footer ";
+  }
+}
+
+.item-a {
+  grid-area: header;
+}
+.item-b {
+  grid-area: main;
+}
+.item-c {
+  grid-area: sidebarA;
+}
+
+.item-d {
+  grid-area: sidebarB;
+}
+
+.item-e {
+  grid-area: footer;
 }

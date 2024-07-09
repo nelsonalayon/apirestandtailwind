@@ -3,6 +3,8 @@ import { montserrat } from "./fonts";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import { FaHome, FaSearch, FaHeart, FaUser, FaMoon } from "react-icons/fa";
+import Link from "next/link";
 
 // const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400", style: ["normal"], variable: "--font-bebas"});
 
@@ -19,11 +21,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.className}>
+    <html lang="en" className={`${montserrat.className} scroll-smooth`}>
       <body>
         <Navbar />
+
         {children}
         <Footer />
+        <div
+          id="tab_bar"
+          className="w-full h-auto bg-blue-700 fixed left-0 bottom-0 shadow-md flex space-x-8 items-center justify-center lg:hidden"
+        >
+         
+            <Link rel="stylesheet" href="#home" id="">
+              <FaHome className="w-6 h-6 fill-current text-gray-200" />{" "}
+            </Link>
+
+            <Link rel="stylesheet" href="#recommended" id="" >
+              <FaSearch className="w-6 h-6 fill-current text-gray-200" />
+            </Link>
+
+            <Link rel="stylesheet" href="#featured income" id="">
+              <FaHeart className="w-6 h-6 fill-current text-gray-200" />
+            </Link>
+            
+            <Link rel="stylesheet" href="#faqs" id="">
+            <FaUser className="w-6 h-6 fill-current text-gray-200" />
+            </Link>
+            <Link rel="stylesheet" href="#faqs" id="">
+            <FaMoon className="w-6 h-6 fill-current text-gray-200" />
+            </Link>
+         
+        </div>
       </body>
     </html>
   );
