@@ -10,7 +10,7 @@ const items = [
 export default function Footer() {
   return (
     // text default by copilot
-    <footer className="w-full h-auto bg-slate-400 p-6 space-y-2">
+    <footer className="w-full h-auto bg-slate-400 pt-6 pl-6 pr-6 pb-16 space-y-2 ">
       <div>
         {items.map((item, index) => (
           <p key={index} className="text-sm text-gray-300">

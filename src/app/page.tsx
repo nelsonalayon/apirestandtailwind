@@ -154,7 +154,7 @@ export default function MyTailwindFetchApp() {
         {/* <div>{Data("https://jsonplaceholder.typicode.com/users")}</div> */}
       </header>
       <section id="recommended" className="p-20 ">
-        <p className="text-3xl font-semibold text-primary">Recommended</p>
+        <p className="subtitles">Recommended</p>
         <div className=" w-auto h-72 items-center flex space-x-4 overflow-x-auto overscroll-x-contain mt-6">
           {lovelyPlaces.map((place, index) => {
             return (
@@ -171,7 +171,7 @@ export default function MyTailwindFetchApp() {
         </div>
       </section>
       <section id="featured income" className="px-6 h-full w-full">
-        <p className="text-3xl text-primary font-semibold p-b-6">
+        <p className="subtitles">
           Featured Income
         </p>
         
@@ -208,7 +208,7 @@ export default function MyTailwindFetchApp() {
       </section>
       <section id="faqs" className="w-full h-full">
         <div className="w-full h-full flex flex-col p-6 space-y-6">
-          <p className="text-3xl text-primary font-semibold mb-6 mt-6">FAQs</p>
+          <p className="subtitles">FAQs</p>
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}

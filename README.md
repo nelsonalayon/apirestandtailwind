@@ -6,15 +6,8 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
@@ -22,12 +15,17 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Learnings
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Asyncronism
+- Fetch: see file fetch.tsx from functions folder, and page.tsx file to view how to apply that Learnings
+- Dark mode: how to set a button which change the entire page to light mode to dark mode. In tailwind.config.ts, set darkmode: "class", then, in tag html put a class called dark. Dark class works like a breakpoint but this "breakpoint" (dark) works when user clicked a button. In this case, user can click in the moon icon 
+- Tailwind don´t recognize js validations. To validate we can use clsx library. To view how to use clsx to validate, view darkMode.tsx file into functions folder.
+- We can use normal css with Tailwind, but tags like breakpoints (sm, md, etc) don´t recongize personalized classes. Instead we have to create traditional breakpoints css. To see that, please view global.css file, in this file there is a class called manualGrid. this class has their own breakpoints made with css normal.
+- How to set favicon: put in the root folder (app) a favicon and in layout.tsx folder (the root layout) add a head tag and link a favicon.
+- @apply directive to group all tailwind classes used in a certain tag. See global.css file.
+- Display grid: Featured income section has a display grid. in large screens we used grid-template-rows, grid-template-columns and grig-template-areas.
+- Global css: we can use this file to create a entire design system into this file.
 
 ## Deploy on Vercel
 

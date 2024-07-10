@@ -16,6 +16,11 @@
   }
 }
 
+/* Add this to your global CSS file */
+* {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -39,6 +44,14 @@ body {
 .CardTitle {
   @apply text-3xl font-semibold px-8 pb-2 pt-8 text-white drop-shadow-lg;
 }
+
+.subtitles {
+  @apply text-3xl font-semibold text-primary mb-5 mt-5 dark:text-white;
+}
+
+.tabBarButtons {
+  @apply w-6 h-6 fill-current text-gray-200 drop-shadow-lg ;
+}	
 
 .manualGrid {
   display: grid;

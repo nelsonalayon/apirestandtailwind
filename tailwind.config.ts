@@ -45,6 +45,7 @@ const config: Config = {
     },
   },
   plugins: [],
+  darkMode: "class",
   variants: {
     extend: {
       boxShadow: ["active"],
