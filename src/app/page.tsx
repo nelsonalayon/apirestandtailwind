@@ -147,6 +147,7 @@ const faqs = [
 ];
 
 export default function MyTailwindFetchApp() {
+  let resize = useResize()
   return (
     <>
       <header id="home" className="bg-tertiary">
@@ -177,9 +178,9 @@ export default function MyTailwindFetchApp() {
         
         <div className="manualGrid ">
           {dataLagesCards.map((card, index) => {
-            let style 
+            let style            
             
-            if(useResize() > 1280 ) {
+            if(resize > 1280 ) {
                  if (index === 0) {
               style = "item-a";
             } else if (index === 1) {
