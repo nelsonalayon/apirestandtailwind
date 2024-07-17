@@ -17,7 +17,7 @@ import Sanfrancisco from "../../public/img/sanFrancisco.jpg";
 import Switzerland from "../../public/img/switzerland.jpg";
 import Sydnedy from "../../public/img/sydney.jpg";
 import Yosemite from "../../public/img/yosemite.jpg";
-import resize from "../functions/screenSize";
+import useResize from "../functions/screenSize";
 import "./globals.css";
 
 // Data is the function that fetches the data from the API
@@ -179,7 +179,7 @@ export default function MyTailwindFetchApp() {
           {dataLagesCards.map((card, index) => {
             let style 
             
-            if(resize() > 1280 ) {
+            if(useResize() > 1280 ) {
                  if (index === 0) {
               style = "item-a";
             } else if (index === 1) {
