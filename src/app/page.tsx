@@ -9,7 +9,7 @@ import Bali from "../../public/img/bali.jpg";
 import Chicago from "../../public/img/chicago.jpg";
 import Europe from "../../public/img/europe.jpg";
 import Iceland from "../../public/img/iceland.jpg";
-import La from "../../public/img/la.jpg";
+import La from "../../public/img/LA.jpg";
 import Miami from "../../public/img/miami.jpg";
 import NewYork from "../../public/img/new_york.jpg";
 import Norway from "../../public/img/norway.jpg";
